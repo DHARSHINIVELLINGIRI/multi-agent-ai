@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head><title>AI Career Advisor</title></head>
+<body>
+    <h2>AI Academic & Career Advisor</h2>
+    <input id="name" placeholder="Name"><br>
+    <input id="gpa" type="number" placeholder="GPA"><br>
+    <input id="skills" placeholder="Skills (comma separated)"><br>
+    <input id="interests" placeholder="Interests"><br>
+    <textarea id="resume" placeholder="Resume Text"></textarea><br>
+    <button onclick="analyze()">Analyze My Career</button>
+    <pre id="result"></pre>
+
+    <script>
+        async function analyze() {
+            const data = {
+                name: document.getElementById('name').value,
+                gpa: parseFloat(document.getElementById('gpa').value),
+                skills: document.getElementById('skills').value.split(','),
+                interests: document.getElementById('interests').value.split(','),
+                resume_text: document.getElementById('resume').value
+            };
+            const response = await fetch('http://localhost:8000/analyze', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(data)
+            });
+            const result = await response.json();
+            document.getElementById('result').innerText = JSON.stringify(result, null, 2);
+        }
+    </script>
+</body>
+</html>

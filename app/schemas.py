@@ -6,4 +6,4 @@ class StudentInput(BaseModel):
     gpa: float
     skills: List[str]
     interests: List[str]
-    target_role: str
+    resume_text: str
