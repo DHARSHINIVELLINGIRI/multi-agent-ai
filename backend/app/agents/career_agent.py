@@ -1,2 +1,4 @@
-def career_agent(data):
-    return f"Based on interests {data.interests}, consider Software Engineer or Data Analyst roles."
+async def career_agent(data):
+    if "AI" in data.skills:
+        return "Suggested Career: AI Engineer"
+    return "Suggested Career: Software Developer"

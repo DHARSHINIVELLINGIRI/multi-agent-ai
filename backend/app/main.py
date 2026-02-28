@@ -13,6 +13,17 @@ app = FastAPI()
 
 class UserRequest(BaseModel):
     query: str
+class StudentInput(BaseModel):
+    name: str
+    gpa: float
+    skills: list[str]
+    interests: list[str]
+    resume_text: str
+
+@app.post("/analyze")
+async def analyze_student(data: StudentInput):
+    result = await run_agents(data)
+    return result
 
 @app.get("/")
 def root():

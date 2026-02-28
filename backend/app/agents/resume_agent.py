@@ -1,2 +1,4 @@
-def resume_agent(data):
-    return "Add more project-based experience and quantify achievements."
+async def resume_agent(data):
+    if len(data.resume_text) < 100:
+        return "Expand your resume content."
+    return "Resume looks detailed."
