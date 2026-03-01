@@ -58,3 +58,10 @@ Go to `http://16.171.3.230:8000` in your web browser.
 - **Academic Agent:** Validates if your GPA meets industry standards.
 - **Career Recommendations:** Uses AI to predict your best career path.
 - **Skill Gap:** Tells you exactly what technologies to learn next.
+
+---
+## 📖 Usage Instructions (Contributed by Desigaa)
+1. **Launch**: Ensure the Docker container is running on Port 8000.
+2. **Input**: Enter student GPA (0.0 - 4.0), technical skills, and career interests.
+3. **Analyze**: Click 'Run Multi-Agent Analysis' to trigger the parallel AI agents.
+4. **Review**: Check the dashboard for segmented insights from the Academic, Career, Skill-Gap, and Resume agents.
