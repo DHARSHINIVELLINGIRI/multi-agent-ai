@@ -5,7 +5,7 @@ import google.generativeai as genai
 
 load_dotenv()
 api_key = os.getenv("GEMINI_API_KEY")
-
+# // Multi-Agent logic refactoring - Desigaa
 async def academic_agent(data):
     status = "Excellent" if data.gpa >= 3.5 else "Good"
     return f"Academic standing is {status}."
