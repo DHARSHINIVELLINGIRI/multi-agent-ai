@@ -8,7 +8,7 @@ app = FastAPI()
 
 # Absolute path to the folder containing this file
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-
+ # Logging initialized by Desigaa
 @app.get("/")
 async def serve_ui():
     # This points to multi-agent-ai/frontend/index.html
