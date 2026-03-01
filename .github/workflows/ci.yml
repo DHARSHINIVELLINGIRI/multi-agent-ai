@@ -5,16 +5,20 @@
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            # These commands run on the Ubuntu server, NOT your Windows laptop
+            # These are Ubuntu commands
             sudo apt-get update -y
             sudo apt-get install docker.io -y || true
             sudo systemctl start docker || true
             sudo chmod 666 /var/run/docker.sock || true
             
-            # Pull and Run the app
+            # Pull the latest image from DockerHub
             sudo docker pull ${{ secrets.DOCKER_USERNAME }}/multi-agent-ai:latest
+            
+            # Stop and remove the old container
             sudo docker stop ai-app || true
             sudo docker rm ai-app || true
-            sudo docker run -d --name ai-app -p 80:8000 \
+            
+            # Run the new container on port 8000
+            sudo docker run -d --name ai-app -p 8000:8000 \
             -e GEMINI_API_KEY="${{ secrets.GEMINI_API_KEY }}" \
             ${{ secrets.DOCKER_USERNAME }}/multi-agent-ai:latest
