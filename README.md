@@ -41,3 +41,20 @@ The Docker image is publicly available on DockerHub.
 ### 1. Pull the Image
 ```bash
 docker pull your-dockerhub-username/multi-agent-ai:latest
+
+----
+## 📖 User Manual (Added by Desigaa)
+
+### 1. Accessing the Dashboard
+Go to `http://16.171.3.230:8000` in your web browser.
+
+### 2. Entering Data
+- **Name:** Enter your full name.
+- **GPA:** Enter your score (e.g., 3.8).
+- **Skills:** Type skills separated by commas (e.g., Python, SQL).
+- **Interests:** List your career goals.
+
+### 3. Understanding Results
+- **Academic Agent:** Validates if your GPA meets industry standards.
+- **Career Recommendations:** Uses AI to predict your best career path.
+- **Skill Gap:** Tells you exactly what technologies to learn next.
