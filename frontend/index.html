@@ -77,10 +77,9 @@
                 body: JSON.stringify(data)
             });
             const res = await response.json();
-            
-            content.innerHTML = `
+             content.innerHTML = `
                 <div class="result-card"><h5>🧠 Academic Agent</h5><p>${res.academic}</p></div>
-                <div class="result-card" style="border-color:#00f2fe"><h5>🚀 Career Recommendations</h5><p>${res.career_advice}</p></div>
+                <div class="result-card" style="border-color:#00f2fe"><h5>🚀 Career Advice</h5><p>${res.career_advice}</p></div>
                 <div class="result-card" style="border-color:#ff9a9e"><h5>🔍 Skill Gap Analysis</h5><p>${res.skill_gap}</p></div>
                 <div class="result-card" style="border-color:#a18cd1"><h5>📄 Resume Feedback</h5><p>${res.resume_feedback}</p></div>
             `;
