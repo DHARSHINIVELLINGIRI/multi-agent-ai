@@ -1,5 +1,6 @@
 from pydantic import BaseModel
 from typing import List
+#student validation schema-Desigaa
 
 class StudentInput(BaseModel):
     name: str
